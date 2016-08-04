@@ -29,7 +29,7 @@ class act extends dbconfig
             $result->bindValue(4, $q4, PDO::PARAM_STR);
             $result->bindValue(5, $q5, PDO::PARAM_STR);
             $result->bindValue(6, $q6, PDO::PARAM_STR);
-    
+            
     
             
             $result->execute();
