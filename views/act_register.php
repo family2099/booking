@@ -41,7 +41,7 @@
         $(document).ready(function () {
             $("#btn").click(function () {
                 
-                $("#showBlock").append('<div id="div' + txtId + '">人員編號:<input type="text" name="employee[]" /> 員工名稱:<input type="text" name="employee_name[]" /><input type="button" value="del" onclick="deltxt('+txtId+')"></div>');
+                $("#showBlock").append('<div id="div' + txtId + '">人員編號:<input type="text" name="employee[]" required/> 員工名稱:<input type="text" name="employee_name[]" required/><input type="button" value="del" onclick="deltxt('+txtId+')"></div>');
                 txtId++;
             });
                 
@@ -59,29 +59,30 @@
                 <div class="panel panel-info">
                       
                         <div class="panel-heading">
-                            <div class="page-header" style="">
+                            <div class="page-header">
                                 <center><h1>活動新增</h1><center>
                             </div>
                               
                         </div>
-                        
-                        <!--action="/act/Index/insert_act"-->
+
+
+
                         <div>
                             
                             <form role="form" method="post" onsubmit="return check_time()" action="/act/Index/insert_act">
                                 <div class="form-group">
                                     <label>活動名稱</label>
-                                    <input type="text" class="form-control" name="act_name" placeholder="輸入活動名稱">
+                                    <input type="text" class="form-control" name="act_name" placeholder="輸入活動名稱" required >
                                 </div>
                                 
                                 <div class="form-group">
                                     <label>活動建立人</label>
-                                    <input type="text" class="form-control" name="act_username" placeholder="輸入活動名稱">
+                                    <input type="text" class="form-control" name="act_username" placeholder="輸入活動名稱" required >
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="input2">人數限制</label>
-                                    <input type="number" class="form-control" name="people_limit" min="0">
+                                    <input type="number" class="form-control" name="people_limit" min="0" required >
                                 </div>
                                 
                                 <div class="form-group">
@@ -93,8 +94,8 @@
                                 
                                 <div class="form-group">
                                     <label>開始報名與截止日期時間</label>
-                                    <input name="start_time" id="start_time" type="date" />到
-                                    <input name="end_time" id="end_time" type="date" />
+                                    <input name="start_time" id="start_time" type="date" required/>到
+                                    <input name="end_time" id="end_time" type="date" required/>
                                 </div>
                                 
                                 <div class="form-group">
@@ -112,23 +113,12 @@
                                 <hr>
                                 <button type="submit" class="btn btn-default" name="btnOK" id="btnOK">送出</button>
                             </form>
-                            
-                            
+
                         </div>    
-                                  
-                          
-                      
-                      
+                  
                 </div>
         </div>        
     </div>
-    
-    
-    
-    
-    
-    
-    
-    
+
 </body>
 </html>
