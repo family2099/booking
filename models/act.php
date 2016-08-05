@@ -42,15 +42,11 @@ class act extends dbconfig
             
             $result->execute();
             
-           
-            return true;
+            
+            return $a_number;
         
         }
-        else
-        {
-            return false;
-            
-        }
+        
         
         
     }

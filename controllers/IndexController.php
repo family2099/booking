@@ -47,10 +47,10 @@ class IndexController extends Controller
                 
             }
             
-            if($result && $member_check)
+            if($member_check)
             {
                 
-                $this->view("get_url",true);
+                $this->view("get_url",$result);
                 
             }
             else 

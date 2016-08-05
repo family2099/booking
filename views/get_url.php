@@ -1,7 +1,7 @@
 <?php
 
 
-echo $data;
+// echo $data;
 
 
 
@@ -22,9 +22,13 @@ echo $data;
 	<link href="../views/css/bootstrap.min.css" rel="stylesheet">
 	<script src="../views/js/bootstrap.min.js"></script>
 	
+	
 
     
 </head>
 
 <body>
-    
+    活動網址:<a href="<?php echo "https://true-coolmancz.c9users.io/act/act_member/show/".$data; ?>"><?php echo "https://true-coolmancz.c9users.io/act/act_member/show/".$data; ?></a>
+</body>
+
+</html>
