@@ -35,6 +35,7 @@ class act_memberController extends Controller
                 $data[1]=$all[0]['remain'];
                 $data[2]=$all[0]['partner'];
                 $data[3]=$all[0]['act_name'];
+                $data[4]=$all[0]['id'];
                 $this->view("import_member_data",$data);
             }
             
@@ -46,17 +47,17 @@ class act_memberController extends Controller
     function check_member()
     {
     
-        if(isset($_POST['member_number']) && isset($_POST['member_name']))
-        {
-            $check_ac = $this->model("act_member");
-            
-            
-            $result=$check_ac->member_check($_POST['member_number'],$_POST['member_name']);
-            
-           
-            
-            $this->view("ajax",$result);
-        }
+        // echo $_POST['act_number'];
+        // exit;
+        $check_ac = $this->model("act_member");
+        
+        
+        $result=$check_ac->member_check($_POST['member_number'],$_POST['member_name'],$_POST['act_number']);
+        
+       
+        
+        $this->view("ajax",$result);
+        
     }
     
     function insert_member()
@@ -71,11 +72,12 @@ class act_memberController extends Controller
             }
             $inser_member_data = $this->model("act_member");
             
-            $result=$inser_member_data->member_insert_database($_POST["member_number"],$_POST["member_name"],$_POST["act_number"],$_POST["people_number"]+1);
+            $result=$inser_member_data->member_insert_database($_POST["member_number"],$_POST["member_name"],$_POST["act_number"],$_POST["act_id"],$people_number+1);
             
-        
-        
-        
+            if($result)
+            {
+                $this->view("show","報名成功");
+            }
         
     }
     

@@ -1,7 +1,7 @@
 <?php
 
-var_dump($_POST);
-
+// var_dump($_POST);
+// echo $data[0];
 
 ?>
 
@@ -21,41 +21,7 @@ var_dump($_POST);
 	
 	<script>
 	    
-	   // $(document).ready(function()
-	   // {
-              
-    //             $.ajax({
-    //                 url: '/act/act_member/check_member',
-    //                 type: 'POST',
-    //                 data: {
-    //                   "member_number": $('#member_number').val(),
-    //                   "member_name": $('#member_name').val()
-    //                 },
-    //                 error:function(xml, ajaxOptions, thrownError){ 
-    // 					alert(xml.status); 
-    //         			alert(thrownError); 
-    //         		},
-    //         		async: false,
-    //         		success: function(data) {
-            		    
-    //         		    dec=data;
-    //         		  //  if(data==0)
-    //         		  //  {
-            		       
-    //         		 	//     alert("您輸入的資料是否錯誤或您沒權限");
-            		
-            		        
-    //         		  //  }   
-    //         		}
-        		    
-			
-    //     });
-	    
-	    
-	    
-	    
-	    
-	    
+	  
 	    
 	    function check_member()
 	    {              
@@ -71,7 +37,8 @@ var_dump($_POST);
                     type: 'POST',
                     data: {
                       "member_number": $('#member_number').val(),
-                      "member_name": $('#member_name').val()
+                      "member_name": $('#member_name').val(),
+                      "act_number": $('#act_number').val()
                     },
                     error:function(xml, ajaxOptions, thrownError){ 
     					alert(xml.status); 
@@ -81,6 +48,7 @@ var_dump($_POST);
             		success: function(data) {
             		    
             		    dec=data;
+            		  //alert(data);
             		  //  if(data==0)
             		  //  {
             		       
@@ -123,7 +91,7 @@ var_dump($_POST);
                               
                         </div>
                         
-                        
+                        <!--action="/act/act_member/insert_member-->
                         <div>
                             <form role="form" method="post" onsubmit="return check_member();" action="/act/act_member/insert_member">
                                 
@@ -154,8 +122,8 @@ var_dump($_POST);
                                     <label>剩餘人數:<?php echo $data[1];?>人</label>
                                     
                                 </div>
-                                
-                                <input type="hidden" name="act_number" value="<?php echo $data[0];?>">
+                                <input type="hidden" name="act_id" id="act_id" value="<?php echo $data[4];?>">
+                                <input type="hidden" name="act_number" id="act_number" value="<?php echo $data[0];?>">
                                 <button type="submit" class="btn btn-default" name="btnOK" >送出</button>
            
                             </form>
