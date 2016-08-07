@@ -189,7 +189,7 @@ class act_member extends dbconfig
 			echo $err->getMessage();
 		}
 		
-// 		
+	
 	}
         
         
