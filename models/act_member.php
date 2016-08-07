@@ -161,7 +161,7 @@ class act_member extends dbconfig
                 $query = "UPDATE `act_member` SET `participate`= 1 WHERE `member_number`=? AND `member_name`=? AND `act_number`=? ";
 			 //   echo $query;
 			 //   exit;
-			    $result = $this->_dsnconn->prepare($query);
+                $result = $this->_dsnconn->prepare($query);
 			    
     			$result->bindValue(1, $q1, PDO::PARAM_STR);
                 $result->bindValue(2, $q2, PDO::PARAM_STR);
