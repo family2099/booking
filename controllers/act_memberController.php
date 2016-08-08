@@ -3,7 +3,10 @@
 
 class act_memberController extends Controller
 {
+    /*-----------------------------------
+    活動報名頁呈現狀況
     
+    -------------------------------------*/
     function show($act_number)
     {
         
@@ -44,11 +47,15 @@ class act_memberController extends Controller
         
     }
     
+    /*-----------------------------------
+    確認是否有該名人員
+    
+    -------------------------------------*/
+    
     function check_member()
     {
     
-        // echo $_POST['act_number'];
-        // exit;
+       
         $check_ac = $this->model("act_member");
         
         
@@ -59,6 +66,11 @@ class act_memberController extends Controller
         $this->view("ajax",$result);
         
     }
+    
+    /*-----------------------------------
+    確認人員是否能餐與活動
+    
+    -------------------------------------*/
     
     function insert_member()
     {
