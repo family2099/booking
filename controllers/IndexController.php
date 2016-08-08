@@ -2,14 +2,14 @@
 
 class IndexController extends Controller 
 {
+    /*--------------------------
+    一開始畫面
+    -----------------------------*/
     function index() 
     {
         
         $this->view("act_register");
-        
-            
-        
-        
+       
     }
     
     
@@ -31,20 +31,18 @@ class IndexController extends Controller
             $member_name=$_POST['employee_name'];
             $number=count($_POST['employee']);
             
-            // echo $member_num[0];
-            // exit;
 
             for($i=0;$i<$number;$i++)
             {
                 $result1=$act_build->act_member_insert($member_num[$i],$member_name[$i]);
+                
                 if($result1)
                 {
                     $member_check=$result1;
                     
                 }
                 
-                
-                
+              
             }
             
             if($member_check)
@@ -55,26 +53,16 @@ class IndexController extends Controller
             }
             else 
             {
-                
-                
+               
                 $this->view("act_register",false);
-                
-                
+               
             }
         
             
             
-            
-            
-            
         }
         
-        
-        
-        
-            
-        
-        
+ 
     }
     
     
