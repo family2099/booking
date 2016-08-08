@@ -5,9 +5,10 @@ require_once("dbconfig.php");
 
 class act extends dbconfig
 {
-    
+    //活動編號
     public $act_number;
     
+    //連線
     public function __construct()
     {
      
@@ -16,6 +17,10 @@ class act extends dbconfig
         
     }   
     
+    
+    /*---------------------------------
+    建立活動資料存入create_act資料表
+    ----------------------------------*/
     function act_insert($q1,$q2,$q3,$q4,$q5,$q6,$q7)
     {
         
@@ -51,7 +56,9 @@ class act extends dbconfig
         
     }
     
-    
+    /*-----------------------------------------
+    將人員資料存入act_member資料表
+    --------------------------------------*/
     function act_member_insert($q1,$q2)
     {
         
