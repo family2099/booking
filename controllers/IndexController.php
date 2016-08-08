@@ -12,7 +12,9 @@ class IndexController extends Controller
        
     }
     
-    
+    /*--------------------------
+    將建立活動的資料存入資料庫
+    -----------------------------*/
     function insert_act() 
     {
         $member_check=false;
@@ -29,6 +31,7 @@ class IndexController extends Controller
             
             $member_num=$_POST['employee'];
             $member_name=$_POST['employee_name'];
+            
             $number=count($_POST['employee']);
             
 
