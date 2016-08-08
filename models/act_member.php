@@ -32,13 +32,13 @@ class act_member extends dbconfig
         		while($row=$result->fetch(PDO::FETCH_ASSOC))
     			{
     			   $arr[$p]=array(
-                        "id"=>$row["id"],
-                        "act_name"=>$row["act_name"],
-                        "act_number"=>$row["act_number"],
-                        "remain"=>$row["remain"],
-                        "partner"=>$row["partner"],
-                        "start_time"=>$row["start_time"],
-                        "end_time"=>$row["end_time"]
+                            "id"=>$row["id"],
+                            "act_name"=>$row["act_name"],
+                            "act_number"=>$row["act_number"],
+                            "remain"=>$row["remain"],
+                            "partner"=>$row["partner"],
+                            "start_time"=>$row["start_time"],
+                            "end_time"=>$row["end_time"]
     					
     			
     			    );
@@ -98,13 +98,13 @@ class act_member extends dbconfig
         
         try
         {
-			$this->_dsnconn->beginTransaction();
-			
-			
-			$query = "SELECT participate FROM `act_member` WHERE `member_number`=? AND `member_name`=? AND `act_number`=?";
-			
-			$result = $this->_dsnconn->prepare($query);
-			
+            $this->_dsnconn->beginTransaction();
+            
+            
+            $query = "SELECT participate FROM `act_member` WHERE `member_number`=? AND `member_name`=? AND `act_number`=?";
+            
+            $result = $this->_dsnconn->prepare($query);
+            
             $result->bindValue(1, $q1, PDO::PARAM_STR);
             $result->bindValue(2, $q2, PDO::PARAM_STR);
             $result->bindValue(3, $q3, PDO::PARAM_STR);
