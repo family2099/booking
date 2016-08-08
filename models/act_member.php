@@ -11,7 +11,7 @@ class act_member extends dbconfig
         parent::__construct();
         
     }
-    
+    //取得活動資料,呈現畫面讓使用者可以報名
     function get_act_time($q1)
     {
         
@@ -32,13 +32,13 @@ class act_member extends dbconfig
         		while($row=$result->fetch(PDO::FETCH_ASSOC))
     			{
     			   $arr[$p]=array(
-    			        "id"=>$row["id"],
-    					"act_name"=>$row["act_name"],
-    					"act_number"=>$row["act_number"],
-    					"remain"=>$row["remain"],
-    					"partner"=>$row["partner"],
-    					"start_time"=>$row["start_time"],
-    					"end_time"=>$row["end_time"]
+                        "id"=>$row["id"],
+                        "act_name"=>$row["act_name"],
+                        "act_number"=>$row["act_number"],
+                        "remain"=>$row["remain"],
+                        "partner"=>$row["partner"],
+                        "start_time"=>$row["start_time"],
+                        "end_time"=>$row["end_time"]
     					
     			
     			    );
@@ -89,7 +89,9 @@ class act_member extends dbconfig
         }
         
     }
-    
+    /*---------------------------------------------------------
+    先確認是否已報名過,如果未報名過就讓使用者輸入的資料匯入資料庫
+    ----------------------------------------------------------*/
     
     function member_insert_database($q1,$q2,$q3,$q4,$q5)
     {
@@ -103,7 +105,7 @@ class act_member extends dbconfig
 			
 			$result = $this->_dsnconn->prepare($query);
 			
-			$result->bindValue(1, $q1, PDO::PARAM_STR);
+            $result->bindValue(1, $q1, PDO::PARAM_STR);
             $result->bindValue(2, $q2, PDO::PARAM_STR);
             $result->bindValue(3, $q3, PDO::PARAM_STR);
             
@@ -184,10 +186,11 @@ class act_member extends dbconfig
             
             return true;
         }    
-        catch (Exception $err) {
+        catch (Exception $err) 
+        {
 			$this->_dsnconn->rollback();
 			echo $err->getMessage();
-		}
+        }
 		
 	
 	}
