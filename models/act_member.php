@@ -59,7 +59,9 @@ class act_member extends dbconfig
         
     }
     
-    
+    /*---------------------------------------------------------
+    先確認是否有該名報名人員資料
+    ----------------------------------------------------------*/
     function member_check($acc,$passw,$act_num)
     {
         $query="SELECT `member_number`, `member_name` FROM `act_member` WHERE `member_number`=? AND `member_name`=? AND `act_number`=?";
