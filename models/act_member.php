@@ -163,7 +163,7 @@ class act_member extends dbconfig
 			 //   exit;
                 $result = $this->_dsnconn->prepare($query);
 			    
-    			$result->bindValue(1, $q1, PDO::PARAM_STR);
+			    $result->bindValue(1, $q1, PDO::PARAM_STR);
                 $result->bindValue(2, $q2, PDO::PARAM_STR);
                 $result->bindValue(3, $q3, PDO::PARAM_STR);
                 
@@ -174,9 +174,9 @@ class act_member extends dbconfig
             }
             else
             {
-				throw new Exception('超過可以報名人數'); 
-			}
-            
+            	throw new Exception('超過可以報名人數'); 
+            }
+
             
             
             
