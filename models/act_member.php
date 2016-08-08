@@ -111,26 +111,22 @@ class act_member extends dbconfig
             
 			
 			
-			$result->execute();
-			
-			$act_participate = $result->fetch();
-// 			echo $act_participate['participate'];
-// 			exit;
-			
-				
-			if(isset($act_participate['participate']))
-			{
-				// echo $act_participate['participate'];
-		  //  	exit;
-				if($act_participate['participate'] == 1)
-				{
-					throw new Exception('禁止重複報名');
-				}
-			}
+            $result->execute();
+            
+            $act_participate = $result->fetch();
+            
+            
+            	
+            if(isset($act_participate['participate']))
+            {
+            
+            	if($act_participate['participate'] == 1)
+            	{
+            		throw new Exception('禁止重複報名');
+            	}
+            }
 		
-			
-            // echo $q4;
-            // exit;
+	
             $query = "SELECT * FROM `create_act` WHERE `id`=:id FOR UPDATE";
             
 			$result = $this->_dsnconn->prepare($query);
